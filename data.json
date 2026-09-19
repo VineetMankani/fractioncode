@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "description": "We design and build service websites, portfolios and landing pages. Each one is planned for mobile screens, clear navigation and a direct route to enquire."
+  },
+  "studio": {
+    "email": "hello@snyweb.studio",
+    "whatsappNumber": "",
+    "whatsappMessage": "Hi SNYWEB, I'd like to talk about a website project."
+  },
+  "sections": {
+    "projects": true
+  },
+  "services": [
+    {
+      "index": "01",
+      "title": "Design",
+      "copy": "We plan the pages around the questions visitors need answered, then design the key screens for desktop and mobile.",
+      "deliverables": ["Page structure", "Home page direction", "Mobile layouts"]
+    },
+    {
+      "index": "02",
+      "title": "Build",
+      "copy": "Approved screens become responsive pages with readable content, working navigation and a clear contact route.",
+      "deliverables": ["Responsive pages", "Contact actions", "Reusable sections"]
+    },
+    {
+      "index": "03",
+      "title": "Experience",
+      "copy": "We add purposeful interaction, prepare search titles and descriptions, and check the site across screen sizes before launch.",
+      "deliverables": ["Interaction details", "SEO basics", "Device checks"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "atlas-strength-demo",
+      "kind": "demo",
+      "title": "Atlas Strength",
+      "category": "Fitness studio concept",
+      "description": "A membership focused site with class times, pricing and a WhatsApp enquiry route visible on mobile.",
+      "features": ["Class timetable", "Membership plans", "WhatsApp enquiry"],
+      "url": "",
+      "preview": {
+        "brand": "ATLAS / STRENGTH",
+        "headline": "Train with purpose.",
+        "action": "Explore classes",
+        "background": "#181d1a",
+        "foreground": "#f4f4ed",
+        "accent": "#a4d65e"
+      }
+    },
+    {
+      "id": "fieldnotes-demo",
+      "kind": "demo",
+      "title": "Fieldnotes Studio",
+      "category": "Architecture portfolio concept",
+      "description": "A project led portfolio with large image space, concise service pages and a direct brief enquiry.",
+      "features": ["Project gallery", "Service pages", "Brief enquiry"],
+      "url": "",
+      "preview": {
+        "brand": "FIELDNOTES",
+        "headline": "Spaces for living.",
+        "action": "View projects",
+        "background": "#d8d2c8",
+        "foreground": "#302c29",
+        "accent": "#534a43"
+      }
+    },
+    {
+      "id": "nook-coffee-demo",
+      "kind": "demo",
+      "title": "Nook Coffee",
+      "category": "Cafe website concept",
+      "description": "A local cafe site that puts the menu, opening hours, location and directions within easy reach.",
+      "features": ["Menu", "Opening hours", "Directions"],
+      "url": "",
+      "preview": {
+        "brand": "NOOK COFFEE",
+        "headline": "Your corner, your coffee.",
+        "action": "See the menu",
+        "background": "#392b24",
+        "foreground": "#fff1e2",
+        "accent": "#edc49c"
+      }
+    }
+  ],
+  "contact": {
+    "heading": "Tell us about the site you need.",
+    "description": "Send the business name, the pages or features you need, and your target launch date. We'll use that to start the conversation.",
+    "subject": "Website project enquiry",
+    "emailBody": "Business name:\nWhat the website needs to do:\nPages or features needed:\nTarget launch date:\nExisting website (if any):"
+  }
+}
