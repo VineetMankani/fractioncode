@@ -14,7 +14,7 @@ Local saves write `data.json` atomically and archive the previous content plus u
 
 ## Cloudflare Pages and GitHub
 
-Connect the GitHub repository using Cloudflare Pages Git integration. Choose `main` as the production branch, build command `npx pnpm@12.3.4 install --frozen-lockfile && npx pnpm@12.3.4 run validate:content && npx pnpm@12.3.4 run build`, and build output directory `dist`. Keep the root `functions` directory in the repository. There is intentionally no `wrangler.jsonc` or `pages_build_output_dir`; dashboard variables remain manageable there. The `/admin` rewrite and SPA fallback serve the static application, while `_routes.json` restricts function invocation to the API paths.
+Connect the GitHub repository using Cloudflare Pages Git integration. Choose `main` as the production branch, build command `npx pnpm@12.3.4 install --frozen-lockfile && npx pnpm@12.3.4 run validate:content && npx pnpm@12.3.4 run build`, and build output directory `dist`. Keep the root `functions` directory in the repository. There is intentionally no `wrangler.jsonc` or `pages_build_output_dir`; dashboard variables remain manageable there. Cloudflare?s built-in SPA fallback serves `/admin` and `/admin/` without changing the URL; do not add a rewrite to `/index.html`, since Pages canonicalizes that path to `/`. The SPA fallback serves the static application, while `_routes.json` restricts function invocation to the API paths.
 
 Create a fine-grained GitHub personal access token restricted to this repository with **Contents: read and write** (Metadata read is implicit). Set expiration and arrange renewal with the owner. The token must be permitted to push to `main`; branch protection that requires pull requests will reject admin saves. GitHub App permissions and Actions write are unnecessary. Commits always target `main` and use non-forced updates. Concurrent changes produce a conflict message; reload and apply the draft again.
 
@@ -35,7 +35,9 @@ Add the domain under the Pages project's Custom domains tab and follow Cloudflar
 
 ## Verification and handoff
 
-Run `npm run validate:content`, `npm run typecheck`, `npm test`, `npm run test:browser`, `npm run build`, `npm run check:functions` and `npm run check:secrets`. Install the browser once with `npx playwright install chromium`. Browser tests start the local admin server with temporary test credentials on isolated port 4317 and restore content afterward. Local development defaults to port 3000; optional local ADMIN_DEV_PORT changes it. If your machine proxies localhost requests, exclude localhost and 127.0.0.1 using NO_PROXY. The secret scan checks configured username/password/token values against every exported file; supply test credentials through the environment if deployment credentials are unavailable.
+Run `npm run validate:content`, `npm run typecheck`, `npm test`, `npm run test:browser`, `npm run test:pages`, `npm run build`, `npm run check:functions` and `npm run check:secrets`. Install the browser once with `npx playwright install chromium`. Browser tests start the local admin server with temporary test credentials on isolated port 4317 and restore content afterward. Local development defaults to port 3000; optional local ADMIN_DEV_PORT changes it. If your machine proxies localhost requests, exclude localhost and 127.0.0.1 using NO_PROXY. The secret scan checks configured username/password/token values against every exported file; supply test credentials through the environment if deployment credentials are unavailable.
+
+The Pages browser tests exercise both admin URL forms, the homepage and API routing against the built output using Cloudflare?s local Pages server on port 4318.
 
 The Functions check uses Wrangler 3.114.17 to match the Pages build toolchain. Server and shared validation modules use plain JSON imports for compatibility with its bundler.
 
