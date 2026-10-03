@@ -1,0 +1,214 @@
+{
+  "hero": {
+    "description": "string",
+    "badge": "string",
+    "heading": "string",
+    "showBadge": "boolean",
+    "showDescription": "boolean",
+    "showLogo": "boolean",
+    "showName": "boolean",
+    "showHeading": "boolean",
+    "actions": {
+      "array": {
+        "label": "string",
+        "href": "string",
+        "section": "string",
+        "enabled": "boolean"
+      }
+    },
+    "fragments": {
+      "array": {
+        "text": "string",
+        "enabled": "boolean"
+      }
+    }
+  },
+  "studio": {
+    "email": "string",
+    "whatsappNumber": "string",
+    "whatsappMessage": "string",
+    "phoneNumber": "string",
+    "showEmail": "boolean",
+    "showPhone": "boolean",
+    "showWhatsapp": "boolean",
+    "socials": {
+      "array": {
+        "label": "string",
+        "platform": "string",
+        "url": "string",
+        "enabled": "boolean"
+      }
+    },
+    "showPlaceholderNotice": "boolean",
+    "placeholderNotice": "string"
+  },
+  "sections": {
+    "navbar": "boolean",
+    "hero": "boolean",
+    "services": "boolean",
+    "projects": "boolean",
+    "contact": "boolean",
+    "footer": "boolean"
+  },
+  "services": {
+    "array": {
+      "index": "string",
+      "title": "string",
+      "copy": "string",
+      "deliverables": {
+        "array": {
+          "text": "string",
+          "enabled": "boolean"
+        }
+      },
+      "enabled": "boolean",
+      "showIndex": "boolean",
+      "showDescription": "boolean",
+      "showDeliverables": "boolean",
+      "showTitle": "boolean",
+      "showVisual": "boolean",
+      "visual": "string"
+    }
+  },
+  "projects": {
+    "array": {
+      "id": "string",
+      "kind": "string",
+      "title": "string",
+      "category": "string",
+      "description": "string",
+      "features": {
+        "array": {
+          "text": "string",
+          "enabled": "boolean"
+        }
+      },
+      "url": "string",
+      "preview": {
+        "brand": "string",
+        "headline": "string",
+        "action": "string",
+        "background": "string",
+        "foreground": "string",
+        "accent": "string"
+      },
+      "enabled": "boolean",
+      "showPreview": "boolean",
+      "showCategory": "boolean",
+      "showDescription": "boolean",
+      "showFeatures": "boolean",
+      "showLink": "boolean",
+      "showTitle": "boolean",
+      "showKind": "boolean",
+      "image": "string",
+      "imageAlt": "string",
+      "imagePosition": "string"
+    }
+  },
+  "contact": {
+    "heading": "string",
+    "description": "string",
+    "subject": "string",
+    "emailBody": "string",
+    "label": "string",
+    "emailHint": "string",
+    "copyEmail": "string",
+    "copiedEmail": "string",
+    "copyFailed": "string",
+    "browserEmail": "string",
+    "phoneLabel": "string",
+    "whatsappLabel": "string",
+    "showLabel": "boolean",
+    "showHeading": "boolean",
+    "showDescription": "boolean",
+    "showCopyEmail": "boolean",
+    "showBrowserEmail": "boolean",
+    "showSocials": "boolean",
+    "showEmailHint": "boolean"
+  },
+  "brand": {
+    "name": "string",
+    "icon": "string",
+    "logo": "string",
+    "logoAlt": "string",
+    "enabled": "boolean",
+    "logoPosition": "string",
+    "iconAlt": "string"
+  },
+  "theme": {
+    "background": "string",
+    "accent": "string",
+    "foreground": "string"
+  },
+  "metadata": {
+    "title": "string",
+    "description": "string"
+  },
+  "navigation": {
+    "array": {
+      "label": "string",
+      "href": "string",
+      "section": "string",
+      "enabled": "boolean"
+    }
+  },
+  "servicesContent": {
+    "label": "string",
+    "heading": "string",
+    "included": "string",
+    "showLabel": "boolean",
+    "showHeading": "boolean"
+  },
+  "projectsContent": {
+    "label": "string",
+    "heading": "string",
+    "demoHeading": "string",
+    "description": "string",
+    "demoDescription": "string",
+    "menu": "string",
+    "demo": "string",
+    "liveLink": "string",
+    "preview": "string",
+    "empty": "string",
+    "enquiry": "string",
+    "featuresLabel": "string",
+    "showLabel": "boolean",
+    "showHeading": "boolean",
+    "showDescription": "boolean",
+    "imageAltSuffix": "string"
+  },
+  "footer": {
+    "tagline": "string",
+    "backToTop": "string",
+    "showTagline": "boolean",
+    "showBackToTop": "boolean",
+    "copyright": "string",
+    "showCopyright": "boolean",
+    "foundersLabel": "string",
+    "profileLabel": "string",
+    "showFounders": "boolean",
+    "founders": {
+      "array": {
+        "name": "string",
+        "linkedin": "string",
+        "enabled": "boolean"
+      }
+    }
+  },
+  "accessibility": {
+    "skip": "string",
+    "primaryNav": "string",
+    "mobileNav": "string",
+    "openMenu": "string",
+    "closeMenu": "string"
+  },
+  "effects": {
+    "enabled": "boolean",
+    "pointer": "boolean",
+    "ambient": "boolean",
+    "reveals": "boolean"
+  },
+  "sectionOrder": {
+    "array": "string"
+  }
+}

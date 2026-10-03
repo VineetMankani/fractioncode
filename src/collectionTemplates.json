@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "actions": [
+      {
+        "label": "Start a project",
+        "href": "#contact",
+        "section": "contact",
+        "enabled": true
+      }
+    ],
+    "fragments": [
+      {
+        "text": "Design that moves.",
+        "enabled": true
+      }
+    ]
+  },
+  "studio": {
+    "socials": [
+      {
+        "label": "Instagram",
+        "platform": "instagram",
+        "url": "https://www.instagram.com/fractioncode/",
+        "enabled": true
+      }
+    ]
+  },
+  "sections": {},
+  "services": [
+    {
+      "index": "01",
+      "title": "Design",
+      "copy": "We plan the pages around the questions visitors need answered, then design the key screens for desktop and mobile.",
+      "deliverables": [
+        {
+          "text": "Page structure",
+          "enabled": true
+        },
+        {
+          "text": "Home page direction",
+          "enabled": true
+        },
+        {
+          "text": "Mobile layouts",
+          "enabled": true
+        }
+      ],
+      "enabled": true,
+      "showIndex": true,
+      "showDescription": true,
+      "showDeliverables": true,
+      "showTitle": true,
+      "showVisual": true,
+      "visual": "layout"
+    }
+  ],
+  "projects": [
+    {
+      "id": "atlas-strength-demo",
+      "kind": "demo",
+      "title": "Atlas Strength",
+      "category": "Fitness studio concept",
+      "description": "A membership focused site with class times, pricing and a WhatsApp enquiry route visible on mobile.",
+      "features": [
+        {
+          "text": "Class timetable",
+          "enabled": true
+        },
+        {
+          "text": "Membership plans",
+          "enabled": true
+        },
+        {
+          "text": "WhatsApp enquiry",
+          "enabled": true
+        }
+      ],
+      "url": "",
+      "preview": {
+        "brand": "ATLAS / STRENGTH",
+        "headline": "Train with purpose.",
+        "action": "Explore classes",
+        "background": "#181d1a",
+        "foreground": "#f4f4ed",
+        "accent": "#a4d65e"
+      },
+      "enabled": true,
+      "showPreview": true,
+      "showCategory": true,
+      "showDescription": true,
+      "showFeatures": true,
+      "showLink": true,
+      "showTitle": true,
+      "showKind": true,
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 0%"
+    }
+  ],
+  "contact": {},
+  "brand": {},
+  "theme": {},
+  "metadata": {},
+  "navigation": [
+    {
+      "label": "Services",
+      "href": "#services",
+      "section": "services",
+      "enabled": true
+    }
+  ],
+  "servicesContent": {},
+  "projectsContent": {},
+  "footer": {
+    "founders": [
+      {
+        "name": "Vineet Mankani",
+        "linkedin": "https://www.linkedin.com/in/vineet-mankani/",
+        "enabled": true
+      }
+    ]
+  },
+  "accessibility": {},
+  "effects": {},
+  "sectionOrder": [
+    "hero"
+  ]
+}

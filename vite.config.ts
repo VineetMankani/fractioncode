@@ -1,13 +1,14 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
-import path from "path"
-import data from "./data.json"
+import { fileURLToPath } from "node:url"
+import { readFileSync } from "node:fs"
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), {
     name: "site-metadata",
     transformIndexHtml() {
+      const data = JSON.parse(readFileSync(new URL("./data.json", import.meta.url), "utf8"))
       return [
         { tag: "title", children: data.metadata.title, injectTo: "head" },
         { tag: "meta", attrs: { name: "description", content: data.metadata.description }, injectTo: "head" },
@@ -18,7 +19,7 @@ export default defineConfig({
   }],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   server: {

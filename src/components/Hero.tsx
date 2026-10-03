@@ -20,7 +20,7 @@ export function Hero() {
         </div>
         {brand.enabled && hero.showLogo && <div className="brand-stage scene-reveal mx-auto w-full max-w-[360px] lg:max-w-none">
           {siteData.effects.enabled && <div className="orbit-track" aria-hidden="true"><span /></div>}
-          <div className="brand-float"><div className="logo-panel brand-tilt"><div className="logo-shine" aria-hidden="true" /><img src={brand.logo} alt={brand.logoAlt} width="500" height="500" fetchPriority="high" className="relative h-auto w-full" /></div></div>
+          <div className="brand-float"><div className="logo-panel brand-tilt"><div className="logo-shine" aria-hidden="true" /><img src={brand.logo} style={{ objectPosition: brand.logoPosition }} alt={brand.logoAlt} width="500" height="500" fetchPriority="high" className="relative h-auto w-full" /></div></div>
           {siteData.effects.enabled && hero.fragments.filter(item => item.enabled).map((item, i) => <div key={item.text} className={`floating-fragment fragment-${i % 2}`}><span className="fragment-dot" />{item.text}</div>)}
         </div>}
       </div>

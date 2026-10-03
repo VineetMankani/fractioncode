@@ -2,11 +2,18 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@12.3.4",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node scripts/deployment.mjs && vite build",
+    "preview": "vite preview",
+    "dev:admin": "tsx server/dev.ts",
+    "validate:content": "tsx scripts/validate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:browser": "playwright test",
+    "check:secrets": "tsx scripts/check-secrets.ts"
   },
   "dependencies": {
     "framer-motion": "^13.4.0",
@@ -14,6 +21,7 @@
     "react-dom": "^19"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24",
     "@types/react": "^19",
@@ -22,6 +30,7 @@
     "autoprefixer": "^10.6.1",
     "postcss": "^8.5",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "5.7.3",
     "vite": "^8.3.0"
   }

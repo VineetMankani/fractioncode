@@ -8,6 +8,13 @@ __v0_jsx-dev-runtime.ts
 
 # Environment variables
 .env*.local
+.env
+.dev.vars*
+.admin-history/
+test-results/
+playwright-report/
+.function-check/
+.wrangler/
 
 # Common ignores
 node_modules

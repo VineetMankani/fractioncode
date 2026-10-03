@@ -14,6 +14,7 @@ function ProjectPreview({ project }: { project: Project }) {
         alt={project.imageAlt || `${project.title} ${siteData.projectsContent.imageAltSuffix}`}
         loading="lazy"
         className="h-full w-full object-cover object-top"
+        style={{ objectPosition: project.imagePosition }}
       />
     )
   }

@@ -1,9 +1,11 @@
-import data from "../data.json"
+import data from "../data.json" with { type: "json" }
+import type { SiteContent } from "./content"
 
-export const siteData = data
-export type Service = typeof data.services[number]
-export type Project = typeof data.projects[number] & { image?: string; imageAlt?: string }
-export type Section = keyof typeof data.sections
+export let siteData: SiteContent = data
+export function setPreviewContent(content: SiteContent) { siteData = content }
+export type Service = SiteContent["services"][number]
+export type Project = SiteContent["projects"][number]
+export type Section = keyof SiteContent["sections"]
 
 export function visibleLink(link: { enabled: boolean; href: string; section?: string }) {
   return link.enabled && (!link.section || siteData.sections[link.section as Section])

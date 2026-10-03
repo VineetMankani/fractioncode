@@ -8,21 +8,26 @@ import type { CSSProperties } from "react"
 
 export default function App() {
   const { sections, theme, footer, brand } = siteData
-  const firstSection = sections.hero ? "#top" : sections.services ? "#services" : sections.projects ? "#work" : sections.contact ? "#contact" : "#main"
+  const first = siteData.sectionOrder.find(section => sections[section as keyof typeof sections])
+  const firstSection = first ? ({ hero: "#top", services: "#services", projects: "#work", contact: "#contact" } as Record<string, string>)[first] : "#main"
   return (
     <div className="site-shell relative min-h-screen font-body" data-effects={siteData.effects.enabled} data-ambient={siteData.effects.ambient} data-reveals={siteData.effects.reveals} style={{ "--site-bg": theme.background, "--site-accent": theme.accent, "--site-fg": theme.foreground } as CSSProperties}>
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-black">{siteData.accessibility.skip}</a>
       {sections.navbar && <Navbar home={firstSection} />}
       <main id="main">
-        {sections.hero && <Hero />}
-        {sections.services && <Capabilities services={siteData.services.filter(item => item.enabled)} />}
-        {sections.projects && <Projects projects={siteData.projects.filter(item => item.enabled)} email={siteData.studio.showEmail ? siteData.studio.email : ""} />}
-        {sections.contact && <Contact />}
+        {siteData.sectionOrder.map(section => {
+          if (!sections[section as keyof typeof sections]) return null
+          if (section === "hero") return <Hero key={section} />
+          if (section === "services") return <Capabilities key={section} services={siteData.services.filter(item => item.enabled)} />
+          if (section === "projects") return <Projects key={section} projects={siteData.projects.filter(item => item.enabled)} email={siteData.studio.showEmail ? siteData.studio.email : ""} />
+          if (section === "contact") return <Contact key={section} />
+          return null
+        })}
       </main>
       {sections.footer && <footer className="border-t border-white/10 px-6 py-8 md:px-10">
         <div className="mx-auto max-w-6xl text-sm text-white/60">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            {brand.enabled && <span className="flex items-center gap-3 text-xl font-semibold text-white"><img src={brand.icon} alt="" width="40" height="40" />{brand.name}</span>}
+            {brand.enabled && <span className="flex items-center gap-3 text-xl font-semibold text-white"><img src={brand.icon} alt={brand.iconAlt} width="40" height="40" />{brand.name}</span>}
             {footer.showTagline && <span>{footer.tagline}</span>}
             {footer.showBackToTop && <a href={firstSection} className="min-h-11 content-center transition-colors hover:text-[var(--site-accent)]">{footer.backToTop}</a>}
           </div>

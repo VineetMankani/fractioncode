@@ -11,3 +11,5 @@ FractionCode designs and builds responsive websites for businesses, from service
 Run by **Vineet Mankani** and **Jay Shah**.
 
 To preview the site locally, run `pnpm dev`. Website content and settings live in [`data.json`](data.json).
+
+For the `/admin` editor, local setup, Cloudflare deployment and client handoff, see [ADMIN_SETUP.md](ADMIN_SETUP.md).

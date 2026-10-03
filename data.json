@@ -201,7 +201,10 @@
       "showFeatures": true,
       "showLink": true,
       "showTitle": true,
-      "showKind": true
+      "showKind": true,
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 0%"
     },
     {
       "id": "fieldnotes-demo",
@@ -239,7 +242,10 @@
       "showFeatures": true,
       "showLink": true,
       "showTitle": true,
-      "showKind": true
+      "showKind": true,
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 0%"
     },
     {
       "id": "nook-coffee-demo",
@@ -277,7 +283,10 @@
       "showFeatures": true,
       "showLink": true,
       "showTitle": true,
-      "showKind": true
+      "showKind": true,
+      "image": "",
+      "imageAlt": "",
+      "imagePosition": "50% 0%"
     }
   ],
   "contact": {
@@ -306,7 +315,9 @@
     "icon": "/FractionCode-LogoIcon.png",
     "logo": "/FractionCode-LogoFull.png",
     "logoAlt": "FractionCode logo",
-    "enabled": true
+    "enabled": true,
+    "logoPosition": "50% 50%",
+    "iconAlt": ""
   },
   "theme": {
     "background": "#131416",
@@ -397,5 +408,11 @@
     "pointer": true,
     "ambient": true,
     "reveals": true
-  }
+  },
+  "sectionOrder": [
+    "hero",
+    "services",
+    "projects",
+    "contact"
+  ]
 }
