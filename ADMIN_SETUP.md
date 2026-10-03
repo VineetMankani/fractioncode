@@ -35,7 +35,9 @@ Add the domain under the Pages project's Custom domains tab and follow Cloudflar
 
 ## Verification and handoff
 
-Run `npm run validate:content`, `npm run typecheck`, `npm test`, `npm run test:browser`, `npm run build` and `npm run check:secrets`. Install the browser once with `npx playwright install chromium`. Browser tests start the local admin server with temporary test credentials on isolated port 4317 and restore content afterward. Local development defaults to port 3000; optional local ADMIN_DEV_PORT changes it. If your machine proxies localhost requests, exclude localhost and 127.0.0.1 using NO_PROXY. The secret scan checks configured username/password/token values against every exported file; supply test credentials through the environment if deployment credentials are unavailable.
+Run `npm run validate:content`, `npm run typecheck`, `npm test`, `npm run test:browser`, `npm run build`, `npm run check:functions` and `npm run check:secrets`. Install the browser once with `npx playwright install chromium`. Browser tests start the local admin server with temporary test credentials on isolated port 4317 and restore content afterward. Local development defaults to port 3000; optional local ADMIN_DEV_PORT changes it. If your machine proxies localhost requests, exclude localhost and 127.0.0.1 using NO_PROXY. The secret scan checks configured username/password/token values against every exported file; supply test credentials through the environment if deployment credentials are unavailable.
+
+The Functions check uses Wrangler 3.114.17 to match the Pages build toolchain. Server and shared validation modules use plain JSON imports for compatibility with its bundler.
 
 Tests derive visible collection counts and copy from the JSON. Unit tests exercise authentication, CSRF, validation, signatures, local save/conflicts/history/restoration and mock GitHub atomic writes; the mock is not proof of a live deployment. Before handoff, verify production login, image upload, save/rebuild and restore using the actual Pages site and repository token.
 

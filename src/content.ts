@@ -1,5 +1,5 @@
-import original from "../data.json" with { type: "json" }
-import schema from "./contentSchema.json" with { type: "json" }
+import original from "../data.json"
+import schema from "./contentSchema.json"
 
 export type SiteContent = typeof original
 export const contentTemplate: SiteContent = original

@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "test:browser": "playwright test",
-    "check:secrets": "tsx scripts/check-secrets.ts"
+    "check:secrets": "tsx scripts/check-secrets.ts",
+    "check:functions": "npx --yes wrangler@3.114.17 pages functions build --outdir=.function-check"
   },
   "dependencies": {
     "framer-motion": "^13.4.0",
