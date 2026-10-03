@@ -314,7 +314,7 @@
     "foreground": "#f9f8f4"
   },
   "metadata": {
-    "title": "FractionCode - Websites people remember.",
+    "title": "FractionCode",
     "description": "FractionCode designs and builds service websites, portfolios and landing pages with responsive layouts and clear ways for visitors to enquire."
   },
   "navigation": [
@@ -363,7 +363,7 @@
     "imageAltSuffix": "website preview"
   },
   "footer": {
-    "tagline": "Websites people remember.",
+    "tagline": "",
     "backToTop": "Back to top",
     "showTagline": true,
     "showBackToTop": true,
@@ -375,12 +375,12 @@
     "founders": [
       {
         "name": "Vineet Mankani",
-        "linkedin": "",
+        "linkedin": "https://www.linkedin.com/in/vineet-mankani/",
         "enabled": true
       },
       {
         "name": "Jay Shah",
-        "linkedin": "",
+        "linkedin": "https://www.linkedin.com/in/jay-shah-74b9291b9/",
         "enabled": true
       }
     ]
