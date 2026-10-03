@@ -1,101 +1,28 @@
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { BlurText } from "./BlurText"
-import { BrowserMockup } from "./BrowserMockup"
-import { FloatingFragments } from "./FloatingFragments"
-import { Marquee } from "./Marquee"
-import { Reveal } from "./Reveal"
-import { ArrowDown, ArrowUpRight } from "./icons"
+import { siteData, visibleLink } from "../siteData"
+import { ArrowUpRight } from "./icons"
+import { useSceneMotion } from "../hooks/useSceneMotion"
 
-export function Hero({ description }: { description: string }) {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  })
-
-  const mockupScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
-  const mockupBlur = useTransform(scrollYProgress, [0, 1], [0, 10])
-  const mockupOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.25])
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -60])
-  const fragmentsSpread = useTransform(scrollYProgress, [0, 1], [1, 1.4])
-
+export function Hero() {
+  const { hero, brand } = siteData
+  const scene = useSceneMotion<HTMLElement>()
   return (
-    <section
-      id="top"
-      ref={sectionRef}
-      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
-      aria-label="Hero"
-    >
-      <motion.div style={{ scale: fragmentsSpread }} className="absolute inset-0">
-        <FloatingFragments variant="hero" />
-      </motion.div>
-
-      {/* signature browser mockup, floating below/behind the copy */}
-      <motion.div
-        style={{
-          scale: mockupScale,
-          filter: useTransform(mockupBlur, (b) => `blur(${b}px)`),
-          opacity: mockupOpacity,
-        }}
-        className="absolute inset-x-0 bottom-0 top-[38%] flex items-end justify-center px-4 md:top-[30%]"
-      >
-        <BrowserMockup className="w-full max-w-3xl" depth={1} />
-      </motion.div>
-
-      <motion.div
-        style={{ opacity: contentOpacity, y: contentY }}
-        className="relative z-10 mx-auto flex flex-1 flex-col items-center justify-center px-6 pt-28 text-center md:pt-32"
-      >
-        <Reveal>
-          <span className="liquid-glass inline-flex items-center rounded-full px-4 py-1.5 text-xs font-medium tracking-wide text-white/70 md:text-sm">
-            Independent web design &amp; development studio
-          </span>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <p className="mt-7 font-heading text-2xl font-medium uppercase tracking-[0.3em] text-white/90 md:text-3xl md:tracking-[0.4em]">
-            SnyWeb
-          </p>
-        </Reveal>
-
-        <BlurText
-          as="h1"
-          text="Websites people remember."
-          className="mt-4 max-w-4xl font-heading text-6xl italic leading-[0.95] tracking-tight text-white md:text-7xl lg:text-[7rem] xl:text-[8rem]"
-          delay={0.25}
-        />
-
-        <Reveal delay={0.5} className="mt-6 max-w-[650px]">
-          <p className="text-balance text-base leading-relaxed text-white/60 md:text-lg">
-            {description}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.65} className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            data-cursor="open"
-            className="liquid-glass-strong group flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 md:text-base"
-          >
-            Start a Project
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
-          <a
-            href="#services"
-            data-cursor="view"
-            className="group flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white md:text-base"
-          >
-            See What We Do
-            <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-          </a>
-        </Reveal>
-      </motion.div>
-
-      <div className="relative z-10 mt-auto">
-        <Marquee />
+    <section ref={scene} id="top" className="motion-scene hero-section relative flex min-h-[90svh] scroll-mt-28 items-center overflow-hidden px-6 pb-16 pt-36 md:px-10 md:pb-24 md:pt-44">
+      {siteData.effects.enabled && <div className="hero-atmosphere" aria-hidden="true"><div className="scene-grid" /><div className="ambient-haze haze-one" /><div className="ambient-haze haze-two" /><div className="pointer-light" /></div>}
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+        <div className="scene-reveal hero-copy">
+          {hero.showBadge && <p className="mb-7 text-sm text-white/65">{hero.badge}</p>}
+          {brand.enabled && hero.showName && <p className="brand-name mb-7 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">{brand.name}</p>}
+          {hero.showHeading && <h1 className="max-w-2xl font-heading text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">{hero.heading}</h1>}
+          {hero.showDescription && <p className="mt-7 max-w-xl text-base leading-relaxed text-white/65 md:text-lg">{hero.description}</p>}
+          <div className="mt-9 flex flex-wrap gap-4">
+            {hero.actions.filter(visibleLink).map((action, i) => <a key={action.href} href={action.href} className={`${i === 0 ? "brand-button" : "liquid-glass"} inline-flex min-h-12 items-center gap-3 rounded-full px-6 py-3 text-sm font-medium`}>{action.label}<ArrowUpRight className="h-4 w-4" /></a>)}
+          </div>
+        </div>
+        {brand.enabled && hero.showLogo && <div className="brand-stage scene-reveal mx-auto w-full max-w-[360px] lg:max-w-none">
+          {siteData.effects.enabled && <div className="orbit-track" aria-hidden="true"><span /></div>}
+          <div className="brand-float"><div className="logo-panel brand-tilt"><div className="logo-shine" aria-hidden="true" /><img src={brand.logo} alt={brand.logoAlt} width="500" height="500" fetchPriority="high" className="relative h-auto w-full" /></div></div>
+          {siteData.effects.enabled && hero.fragments.filter(item => item.enabled).map((item, i) => <div key={item.text} className={`floating-fragment fragment-${i % 2}`}><span className="fragment-dot" />{item.text}</div>)}
+        </div>}
       </div>
     </section>
   )

@@ -1,50 +1,19 @@
 import data from "../data.json"
 
-export interface Service {
-  index: string
-  title: string
-  copy: string
-  deliverables: string[]
+export const siteData = data
+export type Service = typeof data.services[number]
+export type Project = typeof data.projects[number] & { image?: string; imageAlt?: string }
+export type Section = keyof typeof data.sections
+
+export function visibleLink(link: { enabled: boolean; href: string; section?: string }) {
+  return link.enabled && (!link.section || siteData.sections[link.section as Section])
 }
 
-export interface Project {
-  id: string
-  kind: string
-  title: string
-  category: string
-  description: string
-  features: string[]
-  url?: string
-  image?: string
-  imageAlt?: string
-  preview?: {
-    brand: string
-    headline: string
-    action: string
-    background: string
-    foreground: string
-    accent: string
+export function externalUrl(url: string) {
+  try {
+    const parsed = new URL(url)
+    return ["https:", "http:"].includes(parsed.protocol) ? parsed.href : ""
+  } catch {
+    return ""
   }
 }
-
-interface SiteData {
-  hero: { description: string }
-  studio: {
-    email: string
-    whatsappNumber: string
-    whatsappMessage: string
-  }
-  sections: {
-    projects: boolean
-  }
-  services: Service[]
-  projects: Project[]
-  contact: {
-    heading: string
-    description: string
-    subject: string
-    emailBody: string
-  }
-}
-
-export const siteData: SiteData = data
