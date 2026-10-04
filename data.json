@@ -312,7 +312,7 @@
   },
   "brand": {
     "name": "FractionCode",
-    "icon": "/media/3e918d20-74a8-4cb6-a981-070b60970320.png",
+    "icon": "/FractionCode-LogoIcon.png",
     "logo": "/FractionCode-LogoFull.png",
     "logoAlt": "FractionCode logo",
     "enabled": true,
