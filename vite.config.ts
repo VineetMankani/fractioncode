@@ -14,6 +14,7 @@ export default defineConfig({
         { tag: "meta", attrs: { name: "description", content: data.metadata.description }, injectTo: "head" },
         { tag: "meta", attrs: { name: "theme-color", content: data.theme.background }, injectTo: "head" },
         { tag: "link", attrs: { rel: "icon", href: data.brand.icon }, injectTo: "head" },
+        { tag: "link", attrs: { rel: "icon", type: "image/png", href: "/logo/FractionCode-LogoIcon-Dark-1x1-TransparentBG.png", media: "(prefers-color-scheme: light)" }, injectTo: "head" },
       ]
     },
   }],

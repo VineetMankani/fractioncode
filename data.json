@@ -1,5 +1,9 @@
 {
   "hero": {
+    "marquee": {
+      "enabled": true,
+      "words": ["Design", "Development", "Motion", "Responsive", "Performance", "Experience"]
+    },
     "description": "We design and build service websites, portfolios and landing pages. Each one is planned for mobile screens, clear navigation and a direct route to enquire.",
     "badge": "Independent Web Services Agency",
     "heading": "Websites people remember.",
@@ -312,17 +316,17 @@
   },
   "brand": {
     "name": "FractionCode",
-    "icon": "/FractionCode-LogoIcon.png",
-    "logo": "/FractionCode-LogoFull.png",
+    "icon": "/logo/FractionCode-LogoIcon-Light-1x1-TransparentBG.png",
+    "logo": "/logo/FractionCode-LogoFull-Light-1x1-TransparentBG.png",
     "logoAlt": "FractionCode logo",
     "enabled": true,
     "logoPosition": "50% 50%",
     "iconAlt": ""
   },
   "theme": {
-    "background": "#131416",
-    "accent": "#ff7715",
-    "foreground": "#f9f8f4"
+    "background": "#111111",
+    "accent": "#FF8A2C",
+    "foreground": "#FFFFFF"
   },
   "metadata": {
     "title": "FractionCode",

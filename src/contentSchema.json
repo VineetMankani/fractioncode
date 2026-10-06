@@ -1,5 +1,9 @@
 {
   "hero": {
+    "marquee": {
+      "enabled": "boolean",
+      "words": { "array": "string" }
+    },
     "description": "string",
     "badge": "string",
     "heading": "string",

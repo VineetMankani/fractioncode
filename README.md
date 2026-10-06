@@ -1,5 +1,8 @@
 ﻿<div align="center">
-  <img src="public/FractionCode-LogoFull.png" alt="FractionCode logo" width="240" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/logo/FractionCode-LogoFull-Light-1x1-TransparentBG.png" />
+    <img src="public/logo/FractionCode-LogoFull-Dark-1x1-TransparentBG.png" alt="FractionCode logo" width="240" />
+  </picture>
 
   <h1>FractionCode</h1>
 
