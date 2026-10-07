@@ -33,8 +33,8 @@ export default function App() {
           </div>
           {(footer.showCopyright || footer.showFounders) && <div className="mt-7 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
             {footer.showCopyright && <small className="text-xs">{footer.copyright}</small>}
-            {footer.showFounders && <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
-              <span>{footer.foundersLabel}</span>
+            {footer.showFounders && <p className="leading-relaxed">
+              <span>{footer.foundersLabel}</span>{" "}
               {footer.founders.filter(founder => founder.enabled).map((founder, index) => <span key={founder.name}>
                 {index > 0 && <span aria-hidden="true"> &amp; </span>}
                 {externalUrl(founder.linkedin) ? <a href={externalUrl(founder.linkedin)} target="_blank" rel="noopener noreferrer" aria-label={`${founder.name} ${footer.profileLabel}`} className="footer-founder-link text-white/75">{founder.name}</a> : <span className="text-white/75">{founder.name}</span>}
