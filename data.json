@@ -2,7 +2,14 @@
   "hero": {
     "marquee": {
       "enabled": true,
-      "words": ["Design", "Development", "Motion", "Responsive", "Performance", "Experience"]
+      "words": [
+        "Design",
+        "Development",
+        "Motion",
+        "Responsive",
+        "Performance",
+        "Experience"
+      ]
     },
     "description": "We design and build service websites, portfolios and landing pages. Each one is planned for mobile screens, clear navigation and a direct route to enquire.",
     "badge": "Independent Web Services Agency",
@@ -38,10 +45,10 @@
     ]
   },
   "studio": {
-    "email": "connect@FractionCodeLabs.com",
-    "whatsappNumber": "+91 99999 99999",
+    "email": "connect@fractioncodelabs.com",
+    "whatsappNumber": "+91 77109 25811",
     "whatsappMessage": "Hi FractionCode, I'd like to talk about a website project.",
-    "phoneNumber": "+91 99999 99999",
+    "phoneNumber": "+91 77109 25811",
     "showEmail": true,
     "showPhone": true,
     "showWhatsapp": true,
